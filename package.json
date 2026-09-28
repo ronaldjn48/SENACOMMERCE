@@ -1,0 +1,22 @@
+{
+  "name": "senacommerce-simulador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simulador web interactivo para el programa Técnico en Operaciones de Comercio Electrónico (SENA).",
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i ./src/tailwind.css -o ./css/app.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i ./src/tailwind.css -o ./css/app.css --watch",
+    "vendor": "node scripts/vendor.js",
+    "build": "npm run vendor && npm run build:css",
+    "start": "http-server . -p 8080 -c-1",
+    "test:e2e": "node tests/recorrido.e2e.js"
+  },
+  "devDependencies": {
+    "@fontsource/work-sans": "^5.0.0",
+    "htm": "3.1.1",
+    "http-server": "^14.1.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

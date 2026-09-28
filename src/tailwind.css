@@ -1,0 +1,38 @@
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url('../vendor/fonts/work-sans-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 500; font-display: swap; src: url('../vendor/fonts/work-sans-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 700; font-display: swap; src: url('../vendor/fonts/work-sans-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 800; font-display: swap; src: url('../vendor/fonts/work-sans-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Work Sans'; font-style: normal; font-weight: 900; font-display: swap; src: url('../vendor/fonts/work-sans-latin-900-normal.woff2') format('woff2'); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply bg-papel text-tinta font-sans antialiased; }
+  body { @apply min-h-screen bg-papel; }
+  ::selection { @apply bg-sol text-tinta; }
+  :focus-visible { outline: 3px solid #0A0A0A; outline-offset: 2px; }
+}
+
+@layer components {
+  .nb-input {
+    @apply w-full border-3 border-tinta bg-white px-3 py-2 font-medium text-tinta placeholder:text-gray-500
+      focus:bg-yellow-50 focus:shadow-brutal-sm focus:outline-none disabled:bg-gray-100 disabled:text-gray-500;
+  }
+  .nb-card { @apply border-3 border-tinta bg-white shadow-brutal; }
+  .nb-btn {
+    @apply inline-flex items-center justify-center gap-2 border-3 border-tinta px-4 py-2 font-extrabold uppercase tracking-wide
+      shadow-brutal-sm transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal
+      active:translate-x-0.5 active:translate-y-0.5 active:shadow-none
+      disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-brutal-sm;
+  }
+  .nb-table { @apply w-full border-collapse text-sm; }
+  .nb-table th { @apply border-3 border-tinta bg-tinta px-2 py-2 text-left font-extrabold uppercase text-white; }
+  .nb-table td { @apply border-2 border-tinta px-2 py-1.5 align-top; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .nb-card { box-shadow: none !important; }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SenaCommerce · Simulador de comercio electrónico</title>
+    <meta name="description" content="Simulador web interactivo para el programa Técnico en Operaciones de Comercio Electrónico: portafolio, ventas digitales, posventa, módulos transversales y proyecto final publicado." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' fill='%23FFD60A' stroke='%230A0A0A' stroke-width='6'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%230A0A0A'%3ESC%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div id="app">
+      <p style="padding: 24px; font-family: sans-serif; font-weight: 700">Cargando simulador...</p>
+    </div>
+    <noscript><p style="padding: 24px; font-weight: 700">Activa JavaScript para usar el simulador.</p></noscript>
+
+    <!-- Librerías locales (sin dependencia de CDN) -->
+    <script src="vendor/react.production.min.js"></script>
+    <script src="vendor/react-dom.production.min.js"></script>
+    <script src="vendor/htm.umd.js"></script>
+
+    <!-- Núcleo -->
+    <script src="js/core/base.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/core/datos.js"></script>
+    <script src="js/core/motores.js"></script>
+
+    <!-- Actividades en orden del flujo -->
+    <script src="js/activities/a00-perfil.js"></script>
+    <script src="js/activities/a01-ia-prompts.js"></script>
+    <script src="js/activities/a02-pagos.js"></script>
+    <script src="js/activities/a03-catalogo.js"></script>
+    <script src="js/activities/a04-inventario.js"></script>
+    <script src="js/activities/a05-promociones.js"></script>
+    <script src="js/activities/a06-pauta.js"></script>
+    <script src="js/activities/a07-email.js"></script>
+    <script src="js/activities/a08-chat.js"></script>
+    <script src="js/activities/a09-tickets.js"></script>
+    <script src="js/activities/a10-encuestas.js"></script>
+    <script src="js/activities/a11-roi.js"></script>
+    <script src="js/activities/a12-ingles.js"></script>
+    <script src="js/activities/a14-correo.js"></script>
+    <script src="js/activities/a15-publicacion.js"></script>
+
+    <!-- Aplicación -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
