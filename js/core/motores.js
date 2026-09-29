@@ -166,5 +166,16 @@
     };
   }
 
-  SC.motores = { metodosPago, costoTransaccion, transportadoras, zonaEnvio, pesoVolumetrico, cotizarEnvio, tiposPromo, promoVigente, calcularCarrito, proyecto };
+  function describirPromo(promo) {
+    if (!promo) return '';
+    const f = SC.fmt.cop;
+    if (promo.tipo === 'porcentaje') return `${promo.valor}% de descuento`;
+    if (promo.tipo === 'valor') return `${f(promo.valor)} de descuento`;
+    if (promo.tipo === 'nxm') return `Lleva ${promo.n}, paga solo ${promo.m}`;
+    if (promo.tipo === 'envio') return 'Envío gratis';
+    if (promo.tipo === 'cupon') return `Cupón "${promo.codigo}": ${promo.valor}% de descuento`;
+    return promo.nombre || '';
+  }
+
+  SC.motores = { metodosPago, costoTransaccion, transportadoras, zonaEnvio, pesoVolumetrico, cotizarEnvio, tiposPromo, promoVigente, calcularCarrito, proyecto, describirPromo };
 })();
